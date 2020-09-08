@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://QuitOptionNode.cs" type="Script" id=1]
+
+[node name="MainMenu" type="MarginContainer"]
+margin_right = 1024.0
+margin_bottom = 598.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Options" type="VBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 598.0
+
+[node name="NewMission" type="Button" parent="Options"]
+margin_right = 1024.0
+margin_bottom = 20.0
+text = "New Mission"
+
+[node name="Continue" type="Button" parent="Options"]
+margin_top = 24.0
+margin_right = 1024.0
+margin_bottom = 44.0
+text = "Continue"
+
+[node name="Settings" type="Button" parent="Options"]
+margin_top = 48.0
+margin_right = 1024.0
+margin_bottom = 68.0
+text = "Settings"
+
+[node name="QuitOptionNode" type="Button" parent="Options"]
+margin_top = 72.0
+margin_right = 1024.0
+margin_bottom = 92.0
+text = "Quit"
+script = ExtResource( 1 )
+[connection signal="button_down" from="Options/QuitOptionNode" to="Options/QuitOptionNode" method="_on_QuitOptionNode_button_down"]
