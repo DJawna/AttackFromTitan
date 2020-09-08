@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://QuitOptionNode.cs" type="Script" id=1]
+[ext_resource path="res://NewMissionButton.cs" type="Script" id=2]
 
 [node name="MainMenu" type="MarginContainer"]
 margin_right = 1024.0
@@ -13,10 +14,11 @@ __meta__ = {
 margin_right = 1024.0
 margin_bottom = 598.0
 
-[node name="NewMission" type="Button" parent="Options"]
+[node name="NewMissionButton" type="Button" parent="Options"]
 margin_right = 1024.0
 margin_bottom = 20.0
 text = "New Mission"
+script = ExtResource( 2 )
 
 [node name="Continue" type="Button" parent="Options"]
 margin_top = 24.0
@@ -36,4 +38,5 @@ margin_right = 1024.0
 margin_bottom = 92.0
 text = "Quit"
 script = ExtResource( 1 )
+[connection signal="button_down" from="Options/NewMissionButton" to="Options/NewMissionButton" method="_on_NewMissionButton_button_down"]
 [connection signal="button_down" from="Options/QuitOptionNode" to="Options/QuitOptionNode" method="_on_QuitOptionNode_button_down"]
