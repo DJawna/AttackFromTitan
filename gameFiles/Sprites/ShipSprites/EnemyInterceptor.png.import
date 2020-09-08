@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/330px-Titan_in_true_color.jpg-8bc6974d9b407d5e3a1cb8f66a2effd7.stex"
+path="res://.import/EnemyInterceptor.png-de5064d43b0d07dbc5f8fc11548b6d55.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://RawAssets/330px-Titan_in_true_color.jpg"
-dest_files=[ "res://.import/330px-Titan_in_true_color.jpg-8bc6974d9b407d5e3a1cb8f66a2effd7.stex" ]
+source_file="res://Sprites/ShipSprites/EnemyInterceptor.png"
+dest_files=[ "res://.import/EnemyInterceptor.png-de5064d43b0d07dbc5f8fc11548b6d55.stex" ]
 
 [params]
 
