@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Attack From Titan", "Attack From Titan.csproj", "{E85779E4-950F-4E17-8CA5-3E3947367112}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttackFromTitan", "AttackFromTitan.csproj", "{E85779E4-950F-4E17-8CA5-3E3947367112}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
