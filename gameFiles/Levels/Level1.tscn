@@ -4,9 +4,10 @@
 [ext_resource path="res://Ships/EnemyInterceptor.tscn" type="PackedScene" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 11.0912, 50.0903 )
+extents = Vector2( 20, 580 )
 
 [sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 1024, 20 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -22,11 +23,22 @@ position = Vector2( 1015.62, 944.351 )
 position = Vector2( 0, 540 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VerticalScrollRail/LeftBorder"]
-scale = Vector2( 1.76, 10.96 )
 shape = SubResource( 1 )
 
-[node name="RightBorder" type="Area2D" parent="VerticalScrollRail"]
+[node name="rightBorder" type="Area2D" parent="VerticalScrollRail"]
 position = Vector2( 1920, 540 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VerticalScrollRail/RightBorder"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VerticalScrollRail/rightBorder"]
+shape = SubResource( 1 )
+
+[node name="bottomBorder" type="Area2D" parent="VerticalScrollRail"]
+position = Vector2( 960, 1080 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VerticalScrollRail/bottomBorder"]
+shape = SubResource( 2 )
+
+[node name="topBorder" type="Area2D" parent="VerticalScrollRail"]
+position = Vector2( 960, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VerticalScrollRail/topBorder"]
 shape = SubResource( 2 )
