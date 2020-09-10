@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Sprites/ShipSprites/EnemyInterceptor.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/ShipSprites/PlayerShip.png" type="Texture" id=1]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -12,10 +12,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="EnemyInterceptor" type="Area2D"]
+[node name="PlayerControlledShip" type="Area2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="InterceptorAnimation" type="AnimatedSprite" parent="."]
+[node name="animation" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )

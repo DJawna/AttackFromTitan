@@ -1,8 +1,32 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
+[ext_resource path="res://Ships/PlayerControlledShip.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Ships/EnemyInterceptor.tscn" type="PackedScene" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 11.0912, 50.0903 )
+
+[sub_resource type="RectangleShape2D" id=2]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="EnemyInterceptor" parent="." instance=ExtResource( 2 )]
 position = Vector2( 488.213, 131.853 )
+
+[node name="VerticalScrollRail" type="Node2D" parent="."]
+
+[node name="PlayerControlledShip" parent="VerticalScrollRail" instance=ExtResource( 1 )]
+position = Vector2( 1015.62, 944.351 )
+
+[node name="LeftBorder" type="Area2D" parent="VerticalScrollRail"]
+position = Vector2( 0, 540 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VerticalScrollRail/LeftBorder"]
+scale = Vector2( 1.76, 10.96 )
+shape = SubResource( 1 )
+
+[node name="RightBorder" type="Area2D" parent="VerticalScrollRail"]
+position = Vector2( 1920, 540 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VerticalScrollRail/RightBorder"]
+shape = SubResource( 2 )
