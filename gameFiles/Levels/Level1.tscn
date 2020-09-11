@@ -18,6 +18,8 @@ pause_mode = 1
 
 [node name="PlayerControlledShip" parent="VerticalScrollRail" instance=ExtResource( 1 )]
 position = Vector2( 1015.62, 944.351 )
+Acceleration = 20.0
+Deceleration = 5.0
 
 [node name="LeftBorder" type="Area2D" parent="VerticalScrollRail"]
 position = Vector2( 0, 540 )
