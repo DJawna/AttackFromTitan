@@ -19,10 +19,10 @@ public class PauseButtonListener : Node2D
         {
             if (GetTree().Paused){
                 this.Hide();
-                GetTree().Paused = true;
+                GetTree().Paused = false;
             }else{
                 
-                GetTree().Paused = false;
+                GetTree().Paused = true;
                 this.Show();
             }
             

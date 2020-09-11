@@ -1,6 +1,8 @@
 **/Debug/
 **/Release/
 
+*.vscode
+
 
 
 # Godot-specific ignores
