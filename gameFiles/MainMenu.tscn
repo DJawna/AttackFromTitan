@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://QuitOptionNode.cs" type="Script" id=1]
-[ext_resource path="res://NewMissionButton.cs" type="Script" id=2]
+[ext_resource path="res://Scripts/Core/QuitOptionNode.cs" type="Script" id=1]
+[ext_resource path="res://Scripts/Core/NewMissionButton.cs" type="Script" id=2]
 
 [node name="MainMenu" type="MarginContainer"]
 margin_right = 1024.0
