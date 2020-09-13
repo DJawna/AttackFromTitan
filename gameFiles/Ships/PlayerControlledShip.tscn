@@ -16,7 +16,7 @@ animations = [ {
 [node name="PlayerControlledShip" type="Area2D"]
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="PlayerControlledShipCollisionModel" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="animation" type="AnimatedSprite" parent="."]
