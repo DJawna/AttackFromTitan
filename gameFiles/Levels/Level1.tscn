@@ -46,3 +46,5 @@ position = Vector2( 488.213, 131.853 )
 
 [node name="PlayerControlledShip" parent="." instance=ExtResource( 1 )]
 position = Vector2( 980, 876 )
+Deceleration = 5.0
+Acceleration = 60.0
