@@ -15,28 +15,28 @@ pause_mode = 1
 
 [node name="VerticalScrollRail" type="Node2D" parent="."]
 
-[node name="LeftBorder" type="Area2D" parent="VerticalScrollRail"]
-position = Vector2( 0, 540 )
+[node name="leftBorder" type="StaticBody2D" parent="VerticalScrollRail"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VerticalScrollRail/LeftBorder"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VerticalScrollRail/leftBorder"]
+position = Vector2( 0, 540 )
 shape = SubResource( 1 )
 
-[node name="rightBorder" type="Area2D" parent="VerticalScrollRail"]
-position = Vector2( 1920, 540 )
+[node name="rightBorder" type="StaticBody2D" parent="VerticalScrollRail"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VerticalScrollRail/rightBorder"]
+position = Vector2( 1920, 540 )
 shape = SubResource( 1 )
 
-[node name="bottomBorder" type="Area2D" parent="VerticalScrollRail"]
-position = Vector2( 960, 1080 )
+[node name="bottomBorder" type="StaticBody2D" parent="VerticalScrollRail"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VerticalScrollRail/bottomBorder"]
+position = Vector2( 960, 1080 )
 shape = SubResource( 2 )
 
-[node name="topBorder" type="Area2D" parent="VerticalScrollRail"]
-position = Vector2( 960, 0 )
+[node name="topBorder" type="StaticBody2D" parent="VerticalScrollRail"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VerticalScrollRail/topBorder"]
+position = Vector2( 960, 0 )
 shape = SubResource( 2 )
 
 [node name="EnemyInterceptor" parent="." instance=ExtResource( 2 )]

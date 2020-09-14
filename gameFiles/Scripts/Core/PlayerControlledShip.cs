@@ -15,13 +15,10 @@ namespace AttackFromTitan.Core
         [Export]
         public float Acceleration { get; set; } = 10f;
 
-        
 
-        
 
 
         //  // Called every frame. 'delta' is the elapsed time since the previous frame.
-
         public override void _PhysicsProcess(float delta) {
             var direction = new Vector2(0f,0f);
             var currentStrength =0f;            
@@ -34,22 +31,22 @@ namespace AttackFromTitan.Core
             }
             if (Input.IsActionPressed("ui_down"))
             {
-                direction.x = Vector2.Down.x;
-                direction.y = Vector2.Down.y;
+                direction.x += Vector2.Down.x;
+                direction.y += Vector2.Down.y;
 
                 currentStrength = Input.GetActionStrength("ui_down");
             }
             if (Input.IsActionPressed("ui_right"))
             {
-                direction.x = Vector2.Right.x;
-                direction.y = Vector2.Right.y;
+                direction.x += Vector2.Right.x;
+                direction.y += Vector2.Right.y;
 
                 currentStrength = Input.GetActionStrength("ui_right");
             }
             if (Input.IsActionPressed("ui_left"))
             {
-                direction.x = Vector2.Left.x;
-                direction.y = Vector2.Left.y;
+                direction.x += Vector2.Left.x;
+                direction.y += Vector2.Left.y;
 
                 currentStrength = Input.GetActionStrength("ui_left");
             }
@@ -64,7 +61,7 @@ namespace AttackFromTitan.Core
             velocity.x += Math.Sign(velocity.x) * -1 * Math.Abs(velocity.x) * delta * Deceleration;
             velocity.y += Math.Sign(velocity.y) * -1 * Math.Abs(velocity.y) * delta * Deceleration;
 
-            
+
             MoveAndCollide(velocity * delta);
         }
     }
