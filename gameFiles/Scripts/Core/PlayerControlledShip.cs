@@ -15,8 +15,15 @@ namespace AttackFromTitan.Core
         [Export]
         public float Acceleration { get; set; } = 10f;
 
+        [Signal]
+        public delegate void OnPrimaryFireEvent();
 
-
+        
+        public override void _Process(float delta){
+            if(Input.IsActionPressed("primary_fire")){
+                EmitSignal(nameof(OnPrimaryFireEvent));
+            }
+        }
 
         //  // Called every frame. 'delta' is the elapsed time since the previous frame.
         public override void _PhysicsProcess(float delta) {

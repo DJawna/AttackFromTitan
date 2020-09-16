@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Ships/PlayerControlledShip.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Systems/ProjectileSpawner.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Ships/EnemyInterceptor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Ui/PauseMenuLayer.tscn" type="PackedScene" id=3]
 
@@ -44,7 +44,5 @@ position = Vector2( 488.213, 131.853 )
 
 [node name="PauseMenuLayer" parent="." instance=ExtResource( 3 )]
 
-[node name="PlayerControlledShip" parent="." instance=ExtResource( 1 )]
-position = Vector2( 980, 876 )
-Deceleration = 5.0
-Acceleration = 60.0
+[node name="ProjectileSpawner" parent="." instance=ExtResource( 1 )]
+position = Vector2( 952, 844 )
