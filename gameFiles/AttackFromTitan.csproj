@@ -61,7 +61,6 @@
     <Compile Include="Scripts\Core\NewMissionButton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scripts\Core\PcsKinemaTest.cs" />
-    <Compile Include="Scripts\Core\ProjectileSpawner.cs" />
     <Compile Include="Scripts\Core\QuitOptionNode.cs" />
     <Compile Include="Scripts\Core\PlayerControlledShip.cs" />
     <Compile Include="Ships\DummyNode.cs" />

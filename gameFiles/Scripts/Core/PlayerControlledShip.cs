@@ -1,10 +1,8 @@
 using Godot;
 using System;
 
-namespace AttackFromTitan.Core
-{
-    public class PlayerControlledShip : KinematicBody2D
-    {
+namespace AttackFromTitan.Core {
+    public class PlayerControlledShip : KinematicBody2D {
         private Vector2 velocity = new Vector2(0, 0);
 
 
@@ -15,43 +13,53 @@ namespace AttackFromTitan.Core
         [Export]
         public float Acceleration { get; set; } = 10f;
 
-        [Signal]
-        public delegate void OnPrimaryFireEvent();
+        [Export]
+        public string ProjectileSceneName { get; set; }
 
-        
-        public override void _Process(float delta){
-            if(Input.IsActionPressed("primary_fire")){
-                EmitSignal(nameof(OnPrimaryFireEvent));
+        [Export]
+        public float ProjectileCooldown { get; set; } = 0.5f;
+        private float currentProjectileCooldown;
+
+        private PackedScene projectileScene;
+        public override void _Ready() {
+            projectileScene = GD.Load<PackedScene>(ProjectileSceneName);
+            if(projectileScene == null){
+                throw new Exception($"Scene could not be instanced: {ProjectileSceneName}");
             }
         }
 
-        //  // Called every frame. 'delta' is the elapsed time since the previous frame.
+        public override void _Process(float delta) {
+            currentProjectileCooldown = Math.Max(0, currentProjectileCooldown - delta);
+            if (Input.IsActionPressed("primary_fire") && currentProjectileCooldown <= 0) {
+                var foo =(Node2D) projectileScene.Instance();
+                foo.Position = this.Position;
+                GetParent().AddChild(foo);
+                currentProjectileCooldown = ProjectileCooldown;
+            }
+        }
+
         public override void _PhysicsProcess(float delta) {
-            var direction = new Vector2(0f,0f);
-            var currentStrength =0f;            
-            if (Input.IsActionPressed("ui_up"))
-            {
+            var direction = new Vector2(0f, 0f);
+            var currentStrength = 0f;
+            if (Input.IsActionPressed("ui_up")) {
                 direction.x = Vector2.Up.x;
                 direction.y = Vector2.Up.y;
 
                 currentStrength = Input.GetActionStrength("ui_up");
             }
-            if (Input.IsActionPressed("ui_down"))
-            {
+            if (Input.IsActionPressed("ui_down")) {
                 direction.x += Vector2.Down.x;
                 direction.y += Vector2.Down.y;
 
                 currentStrength = Input.GetActionStrength("ui_down");
             }
-            if (Input.IsActionPressed("ui_right"))
-            {
+            if (Input.IsActionPressed("ui_right")) {
                 direction.x += Vector2.Right.x;
                 direction.y += Vector2.Right.y;
 
                 currentStrength = Input.GetActionStrength("ui_right");
             }
-            if (Input.IsActionPressed("ui_left"))
-            {
+            if (Input.IsActionPressed("ui_left")) {
                 direction.x += Vector2.Left.x;
                 direction.y += Vector2.Left.y;
 
@@ -70,6 +78,14 @@ namespace AttackFromTitan.Core
 
 
             MoveAndCollide(velocity * delta);
+        }
+    
+        public override string _GetConfigurationWarning(){
+            var errorString = "";
+            if(string.IsNullOrEmpty(ProjectileSceneName)){
+                errorString = "You need to add a projectille scene name";
+            }
+            return errorString;
         }
     }
 
