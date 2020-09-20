@@ -77,7 +77,8 @@ namespace AttackFromTitan.Core {
             velocity.y += Math.Sign(velocity.y) * -1 * Math.Abs(velocity.y) * delta * Deceleration;
 
 
-            MoveAndCollide(velocity * delta);
+            //MoveAndCollide(velocity * delta);
+            MoveAndSlide(velocity);
         }
     
         public override string _GetConfigurationWarning(){
