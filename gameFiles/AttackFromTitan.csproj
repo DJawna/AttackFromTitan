@@ -63,8 +63,7 @@
     <Compile Include="Scripts\Core\PcsKinemaTest.cs" />
     <Compile Include="Scripts\Core\QuitOptionNode.cs" />
     <Compile Include="Scripts\Core\PlayerControlledShip.cs" />
-    <Compile Include="Ships\DummyNode.cs" />
-    <Compile Include="Systems\Projectile.cs" />
+    <Compile Include="Scripts\Core\Projectile.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
