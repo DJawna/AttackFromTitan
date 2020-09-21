@@ -14,13 +14,10 @@ namespace AttackFromTitan.Core {
 
         float ttl = 1f;
 
-        //  // Called every frame. 'delta' is the elapsed time since the previous frame.
-        public override void _Process(float delta) {
+        public override void _PhysicsProcess(float delta){
             var newPos = new Vector2(Position.x, Position.y - 10);
             Position = newPos;
-        }
 
-        public override void _PhysicsProcess(float delta){
             ttl -= delta;
             if(ttl <0){
                 QueueFree();
