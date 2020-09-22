@@ -24,7 +24,7 @@ shape = SubResource( 1 )
 frames = SubResource( 2 )
 
 [node name="HitPointSystem" parent="." instance=ExtResource( 2 )]
-Hitpoints = 50
+Hitpoints = 10
 VulnerableToHumans = true
 [connection signal="area_entered" from="." to="HitPointSystem" method="OnArea2dEntered"]
 [connection signal="OnDeath" from="HitPointSystem" to="." method="OnDeath"]
