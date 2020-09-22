@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Ships/PlayerControlledShip.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Ships/EnemyInterceptor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Ui/PauseMenuLayer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/Core/GameSceneRoot.cs" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 20, 580 )
@@ -12,6 +13,7 @@ extents = Vector2( 1024, 20 )
 
 [node name="GameSceneRoot" type="Node2D"]
 pause_mode = 1
+script = ExtResource( 4 )
 
 [node name="VerticalScrollRail" type="Node2D" parent="."]
 
@@ -48,3 +50,4 @@ ProjectileSceneName = "res://Systems/Projectile.tscn"
 position = Vector2( 488.213, 131.853 )
 
 [node name="PauseMenuLayer" parent="." instance=ExtResource( 3 )]
+[connection signal="OnDeath" from="VerticalScrollRail/PlayerControlledShip" to="." method="EmitGameOver"]

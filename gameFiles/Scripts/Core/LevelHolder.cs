@@ -25,6 +25,7 @@ namespace AttackFromTitan.Core {
                 levelInstance.QueueFree();
             }
             levelInstance = level.Instance();
+            levelInstance.Connect("OnGameOver",this,"ResetLevel");
             AddChild(levelInstance);
 
         }

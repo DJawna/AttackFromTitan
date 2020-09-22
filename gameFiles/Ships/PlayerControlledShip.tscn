@@ -21,3 +21,4 @@ texture = ExtResource( 1 )
 [node name="HitPointSystem" parent="." instance=ExtResource( 3 )]
 Hitpoints = 20
 VulnerableToTitanians = true
+[connection signal="OnDeath" from="HitPointSystem" to="." method="EmitDeath"]

@@ -23,6 +23,13 @@ namespace AttackFromTitan.Core {
         public float ProjectileCooldown { get; set; } = 0.5f;
         private float currentProjectileCooldown;
 
+        [Signal]
+        public delegate void OnDeath();
+
+        public void EmitDeath(){
+            EmitSignal(nameof(OnDeath));
+        }
+
         private PackedScene projectileScene;
         public override void _Ready() {
             projectileScene = GD.Load<PackedScene>(ProjectileSceneName);
