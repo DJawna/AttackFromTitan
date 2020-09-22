@@ -2,7 +2,7 @@ using Godot;
 using System;
 
 namespace AttackFromTitan.Core {
-    public class Projectile : Area2D {
+    public class Projectile : Area2D, DoesDamage {
         // Declare member variables here. Examples:
         // private int a = 2;
         // private string b = "text";
@@ -13,6 +13,10 @@ namespace AttackFromTitan.Core {
         }
 
         float ttl = 1f;
+
+
+        public uint Damage { get; set; }
+        public Allegiance Allegiance { get; set; }
 
         public override void _PhysicsProcess(float delta){
             var newPos = new Vector2(Position.x, Position.y - 10);

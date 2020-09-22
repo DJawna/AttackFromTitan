@@ -65,6 +65,7 @@
     <Compile Include="Scripts\Core\HitPointSystem.cs" />
     <Compile Include="Scripts\Core\LevelHolder.cs" />
     <Compile Include="Scripts\Core\MainMenuController.cs" />
+    <Compile Include="Scripts\Core\EnemyInterceptor.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

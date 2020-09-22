@@ -17,6 +17,9 @@ namespace AttackFromTitan.Core {
         public string ProjectileSceneName { get; set; }
 
         [Export]
+        public uint Damage {get;set;}
+
+        [Export]
         public float ProjectileCooldown { get; set; } = 0.5f;
         private float currentProjectileCooldown;
 
@@ -31,9 +34,11 @@ namespace AttackFromTitan.Core {
         public override void _Process(float delta) {
             currentProjectileCooldown = Math.Max(0, currentProjectileCooldown - delta);
             if (Input.IsActionPressed("primary_fire") && currentProjectileCooldown <= 0) {
-                var foo =(Node2D) projectileScene.Instance();
-                foo.Position = this.Position;
-                GetParent().AddChild(foo);
+                var newProjectile =(Projectile) projectileScene.Instance();
+                newProjectile.Position = this.Position;
+                newProjectile.Damage = Damage;
+                newProjectile.Allegiance = Allegiance.humans;
+                GetParent().AddChild(newProjectile);
                 currentProjectileCooldown = ProjectileCooldown;
             }
         }

@@ -51,7 +51,7 @@ namespace AttackFromTitan.Core {
 
     }
 
-    enum Allegiance {
+    public enum Allegiance {
         humans = 0x1,
         titanians = 0x2,
         neutral = 0x4
@@ -60,7 +60,7 @@ namespace AttackFromTitan.Core {
 
     interface DoesDamage {
         uint Damage { get; set; }
-        Allegiance Allegiance { get; set; }
+        Allegiance Allegiance { get;set;}
     }
 
 }
