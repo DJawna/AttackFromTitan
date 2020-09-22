@@ -57,13 +57,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Scripts\Core\PauseButtonListener.cs" />
-    <Compile Include="Scripts\Core\NewMissionButton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scripts\Core\PcsKinemaTest.cs" />
     <Compile Include="Scripts\Core\QuitOptionNode.cs" />
     <Compile Include="Scripts\Core\PlayerControlledShip.cs" />
     <Compile Include="Scripts\Core\Projectile.cs" />
     <Compile Include="Scripts\Core\HitPointSystem.cs" />
+    <Compile Include="Scripts\Core\LevelHolder.cs" />
+    <Compile Include="Scripts\Core\MainMenuController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

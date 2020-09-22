@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Core/LevelHolder.cs" type="Script" id=1]
+
+[node name="LevelHolder" type="Node"]
+script = ExtResource( 1 )
+LevelName = "Level1"
