@@ -26,5 +26,7 @@ frames = SubResource( 2 )
 [node name="HitPointSystem" parent="." instance=ExtResource( 2 )]
 Hitpoints = 10
 VulnerableToHumans = true
+
+[node name="ProjectileSpawner" type="Node" parent="."]
 [connection signal="area_entered" from="." to="HitPointSystem" method="OnArea2dEntered"]
 [connection signal="OnDeath" from="HitPointSystem" to="." method="OnDeath"]

@@ -44,6 +44,7 @@ namespace AttackFromTitan.Core {
                 var newProjectile =(Projectile) projectileScene.Instance();
                 newProjectile.Position = this.Position;
                 newProjectile.Damage = Damage;
+                newProjectile.Speed = 1000f;
                 newProjectile.Allegiance = Allegiance.humans;
                 GetParent().AddChild(newProjectile);
                 currentProjectileCooldown = ProjectileCooldown;

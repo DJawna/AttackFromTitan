@@ -67,6 +67,7 @@
     <Compile Include="Scripts\Core\MainMenuController.cs" />
     <Compile Include="Scripts\Core\EnemyInterceptor.cs" />
     <Compile Include="Scripts\Core\GameSceneRoot.cs" />
+    <Compile Include="Scripts\Core\ProjectileSpawner.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

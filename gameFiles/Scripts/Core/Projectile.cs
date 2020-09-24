@@ -12,18 +12,22 @@ namespace AttackFromTitan.Core {
 
         }
 
-        float ttl = 1f;
+        public float Ttl {get;set;} = 1f;
 
 
         public uint Damage { get; set; }
         public Allegiance Allegiance { get; set; }
 
-        public override void _PhysicsProcess(float delta){
-            var newPos = new Vector2(Position.x, Position.y - 10);
+        public float Speed{get;set;} = 10f;
+
+        public Vector2 Trajectory {get;set;} = new Vector2(0f,-1f);
+
+        public override void _Process(float delta){
+            var newPos = Position + (Trajectory * Speed * delta);
             Position = newPos;
 
-            ttl -= delta;
-            if(ttl <0){
+            Ttl -= delta;
+            if(Ttl <0){
                 QueueFree();
             }
         }
