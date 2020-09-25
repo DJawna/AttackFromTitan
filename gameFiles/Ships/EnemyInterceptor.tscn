@@ -5,6 +5,7 @@
 [ext_resource path="res://Scripts/Core/EnemyInterceptor.cs" type="Script" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
+radius = 40.0
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -17,7 +18,7 @@ animations = [ {
 [node name="EnemyInterceptor" type="Area2D"]
 script = ExtResource( 3 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="InterceptorAnimation" type="AnimatedSprite" parent="."]

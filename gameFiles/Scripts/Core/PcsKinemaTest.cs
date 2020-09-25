@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 namespace AttackFromTitan.Core {
     public class PcsKinemaTest : KinematicBody2D {
@@ -23,7 +22,7 @@ namespace AttackFromTitan.Core {
             }
 
             velocity.y +=  1f;
-            velocity.y = Math.Min(0,velocity.y);
+            velocity.y = Mathf.Min(0f,velocity.y);
 
             MoveAndCollide(velocity);
 

@@ -1,5 +1,5 @@
-using Godot;
 using System;
+using Godot;
 
 namespace AttackFromTitan.Core {
     public class PlayerControlledShip : KinematicBody2D {
@@ -39,7 +39,7 @@ namespace AttackFromTitan.Core {
         }
 
         public override void _Process(float delta) {
-            currentProjectileCooldown = Math.Max(0, currentProjectileCooldown - delta);
+            currentProjectileCooldown = Mathf.Max(0, currentProjectileCooldown - delta);
             if (Input.IsActionPressed("primary_fire") && currentProjectileCooldown <= 0) {
                 var newProjectile =(Projectile) projectileScene.Instance();
                 newProjectile.Position = this.Position;
@@ -86,8 +86,8 @@ namespace AttackFromTitan.Core {
 
 
             // decelerate according to "friction"
-            velocity.x += Math.Sign(velocity.x) * -1 * Math.Abs(velocity.x) * delta * Deceleration;
-            velocity.y += Math.Sign(velocity.y) * -1 * Math.Abs(velocity.y) * delta * Deceleration;
+            velocity.x += Mathf.Sign(velocity.x) * -1 * Mathf.Abs(velocity.x) * delta * Deceleration;
+            velocity.y += Mathf.Sign(velocity.y) * -1 * Mathf.Abs(velocity.y) * delta * Deceleration;
 
             MoveAndSlide(velocity);
         }

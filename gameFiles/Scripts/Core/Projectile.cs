@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 namespace AttackFromTitan.Core {
     public class Projectile : Area2D, DoesDamage {

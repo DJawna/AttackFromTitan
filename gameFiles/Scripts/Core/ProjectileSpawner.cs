@@ -11,7 +11,7 @@ namespace AttackFromTitan.Core {
         public float SpawnCoolDown{get;set;}
         private float currentCoolDown {get;set;}
         private bool spawningEnabled;
-        private Vector2 projectileTargetDirection;
+        private Vector2 projectileTargetDirection = new Vector2(0f,1f);
 
 
         [Export]
