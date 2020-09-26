@@ -22,6 +22,7 @@ namespace AttackFromTitan.Core {
 
         public void ResetLevel(){
             if(levelInstance != null){
+                levelInstance.Disconnect("OnGameOver",this,"ResetLevel");
                 levelInstance.QueueFree();
             }
             levelInstance = level.Instance();

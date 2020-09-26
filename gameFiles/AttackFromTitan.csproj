@@ -56,6 +56,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Scripts\Core\Allegiance.cs" />
     <Compile Include="Scripts\Core\PauseButtonListener.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scripts\Core\PcsKinemaTest.cs" />
@@ -68,6 +69,8 @@
     <Compile Include="Scripts\Core\EnemyInterceptor.cs" />
     <Compile Include="Scripts\Core\GameSceneRoot.cs" />
     <Compile Include="Scripts\Core\ProjectileSpawner.cs" />
+    <Compile Include="Scripts\Core\AutoTargetingSystem.cs" />
+    <Compile Include="Scripts\Core\Targetable.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
