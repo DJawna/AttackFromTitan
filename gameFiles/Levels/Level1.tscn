@@ -46,8 +46,8 @@ position = Vector2( 940, 864 )
 Acceleration = 50.0
 ProjectileSceneName = "res://Systems/Projectile.tscn"
 
-[node name="EnemyInterceptor" parent="." instance=ExtResource( 2 )]
-position = Vector2( 488.213, 131.853 )
-
 [node name="PauseMenuLayer" parent="." instance=ExtResource( 3 )]
+
+[node name="EnemyInterceptor" parent="." instance=ExtResource( 2 )]
+position = Vector2( 466.943, 107.756 )
 [connection signal="OnDeath" from="VerticalScrollRail/PlayerControlledShip" to="." method="EmitGameOver"]

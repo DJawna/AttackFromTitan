@@ -9,6 +9,9 @@ namespace AttackFromTitan.Core {
 
         [Export]
         public float SpawnCoolDown{get;set;}
+
+        [Export]
+        public uint ProjectileDamage {get;set;}
         private float currentCoolDown {get;set;}
         private bool spawningEnabled;
         private Vector2 projectileTargetDirection = new Vector2(0f,1f);
@@ -37,12 +40,13 @@ namespace AttackFromTitan.Core {
                 currentProjectile.Speed = ProjectileSpeed;
                 currentProjectile.Trajectory = projectileTargetDirection;
                 currentProjectile.Position = Position;
+                currentProjectile.Damage = ProjectileDamage;
                 EmitSignal(nameof(EmitProjectile),currentProjectile);
             }
         }
 
-        public void updateProjectileTarget(float x, float y){
-            projectileTargetDirection = Position.DirectionTo(new Vector2(x,y));
+        public void updateProjectileTarget(Vector2 target){
+            projectileTargetDirection = Position.DirectionTo(target);
         }
 
     }

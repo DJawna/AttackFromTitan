@@ -71,6 +71,7 @@
     <Compile Include="Scripts\Core\ProjectileSpawner.cs" />
     <Compile Include="Scripts\Core\AutoTargetingSystem.cs" />
     <Compile Include="Scripts\Core\Targetable.cs" />
+    <Compile Include="Scripts\Controllers\PlayerControlledShipArea2d.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

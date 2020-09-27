@@ -33,14 +33,22 @@ frames = SubResource( 2 )
 Hitpoints = 10
 VulnerableToHumans = true
 
-[node name="ProjectileSpawner" type="Node" parent="."]
-script = ExtResource( 4 )
-
 [node name="AutoTargetingSystem" type="Area2D" parent="."]
 script = ExtResource( 5 )
 
 [node name="EnemyDetectionHorizon" type="CollisionShape2D" parent="AutoTargetingSystem"]
 shape = SubResource( 3 )
+
+[node name="ProjectileSpawner" type="Node2D" parent="."]
+script = ExtResource( 4 )
+ProjectileSceneName = "res://Systems/Projectile.tscn"
+SpawnCoolDown = 0.5
+ProjectileDamage = 5
+ProjectileSpeed = 1000.0
 [connection signal="area_entered" from="." to="HitPointSystem" method="OnArea2dEntered"]
 [connection signal="OnDeath" from="HitPointSystem" to="." method="OnDeath"]
+[connection signal="BroadcastCurrentEnemyLocation" from="AutoTargetingSystem" to="ProjectileSpawner" method="updateProjectileTarget"]
+[connection signal="ToggleAttacking" from="AutoTargetingSystem" to="ProjectileSpawner" method="toggleSpawning"]
 [connection signal="area_entered" from="AutoTargetingSystem" to="AutoTargetingSystem" method="TargetingCandidateEntering"]
+[connection signal="area_exited" from="AutoTargetingSystem" to="AutoTargetingSystem" method="TargetingCandidateLeaving"]
+[connection signal="EmitProjectile" from="ProjectileSpawner" to="." method="addProjectileToParent"]
