@@ -47,7 +47,7 @@ namespace AttackFromTitan.Core {
         }
 
         public void updateProjectileTarget(Vector2 target){
-            projectileTargetDirection = Position.DirectionTo(target);
+            projectileTargetDirection = GlobalPosition.DirectionTo(target);
         }
 
     }

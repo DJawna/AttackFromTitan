@@ -29,26 +29,33 @@ namespace AttackFromTitan.Core {
         [Signal]
         public delegate void ToggleAttacking(bool toggleAttack);
 
+        private bool toggleAttackingFromLastFrame =false; 
+
         public override void _Process(float delta){
-            
-            foreach(var candidate in newCandidates){
-                targets.Add(candidate);
+
+            while(newCandidates.TryDequeue(out var newTarget)){
+                targets.Add(newTarget);
             }
 
-            foreach(var candidate in candidatesToRemove){
-                targets.Remove(candidate);
-            }
-            EmitSignal(nameof(ToggleAttacking),false);
+            while(candidatesToRemove.TryDequeue(out var toRemove)){
+                targets.Remove(toRemove);
+            }          
 
+            var toggleOnAttack = false;
             foreach(var candidate in targets){
                 if(!candidate.IsAlive){
                     candidatesToRemove.Enqueue(candidate);
                 }
                 else{
-                    EmitSignal(nameof(ToggleAttacking),true);
+                    toggleOnAttack = true;
                     EmitSignal(nameof(BroadcastCurrentEnemyLocation),candidate.GlobalPosition);
                     break;
                 }
+            }
+
+            if(toggleOnAttack != toggleAttackingFromLastFrame){
+                EmitSignal(nameof(ToggleAttacking), toggleOnAttack);
+                toggleAttackingFromLastFrame = toggleOnAttack;
             }
         }
     }
