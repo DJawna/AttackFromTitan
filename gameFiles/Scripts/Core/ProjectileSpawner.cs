@@ -39,8 +39,9 @@ namespace AttackFromTitan.Core {
                 var currentProjectile = projectile.Instance() as Projectile;
                 currentProjectile.Speed = ProjectileSpeed;
                 currentProjectile.Trajectory = projectileTargetDirection;
-                currentProjectile.Position = Position;
+                currentProjectile.GlobalPosition = GlobalPosition;
                 currentProjectile.Damage = ProjectileDamage;
+                currentProjectile.Ttl = 0.5f;
                 EmitSignal(nameof(EmitProjectile),currentProjectile);
             }
         }

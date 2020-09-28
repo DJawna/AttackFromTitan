@@ -46,7 +46,7 @@ namespace AttackFromTitan.Core {
                 }
                 else{
                     EmitSignal(nameof(ToggleAttacking),true);
-                    EmitSignal(nameof(BroadcastCurrentEnemyLocation),candidate.Position);
+                    EmitSignal(nameof(BroadcastCurrentEnemyLocation),candidate.GlobalPosition);
                     break;
                 }
             }
