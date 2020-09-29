@@ -1,6 +1,6 @@
-# spaceshooter game
+# Attack from titan
 
-- [spaceshooter game](#spaceshooter-game)
+- [Attack from titan](#attack-from-titan)
   - [Spec](#spec)
     - [Synopsis](#synopsis)
     - [Technical Terms](#technical-terms)
@@ -52,14 +52,7 @@
         - [Level Two Venus](#level-two-venus)
         - [Level Three Mercury](#level-three-mercury)
   - [Tech spec](#tech-spec)
-    - [Data Analysis](#data-analysis)
-      - [Global Data](#global-data)
-      - [Start screen](#start-screen-1)
-      - [options screen](#options-screen-1)
-    - [Main Game Loop](#main-game-loop)
-  - [Issues](#issues)
-    - [nvidia open source driver crash](#nvidia-open-source-driver-crash)
-      - [what should be improved:](#what-should-be-improved)
+    - [the Game is using Godot](#the-game-is-using-godot)
 
 ## Spec
 ### Synopsis
@@ -210,7 +203,7 @@ This is a label which can be updated with dynamic content. For Example the numbe
 
 ### Game world Design
 #### Campaign One
-In the first campaign we will first defend the Alien invasion in earth orbit, then we will pursuit the aliens to their bases on Venus and Mercury.
+In the first campaign we will first defend the Alien invasion in earth orbit, then we will pursuit the aliens to their bases on Venus and Mercury (later it will turn out they are from Titan).
 
 ##### Level One Earth
 
@@ -235,128 +228,6 @@ After defeating the alien invasion in earths orbit we are fighting the alien bas
 ## Tech spec
 This chapter is all about the architecture of the app.
 
-### Data Analysis
+### the Game is using Godot
 
-#### Global Data
-
-*selected ui Elements*
-|screenID (unique)|ui ElementID|default|
-|---|---|---|
-|1|2|2| 
-
-Example: screen ID 1 = Start Screen, ui ElementID 2 = Start New Campaign, only one ui element can be selected per Screen
-
-*audiosettings*
-|settingname|value|defaultValue|
-|---|---|---|
-|masterV %|u8|100|
-|SFXV %|u8|100|
-|musicV %|u8|100|
-
-
-*resolution settings*
-|dimension|value|defaultValue|
-|---|---|---|
-|resX|u16|800|
-|resY|u16|600|
-
-*controls settings*
-|inputname|value|defaultValue|
-|---|---|---|
-|up |u8|upkey|
-|left |u8|leftkey|
-|right |u8|rightkey|
-|down |u8|downkey|
-|Fire |u8|spacekey|
-|special item |u8|control|
-
-
-
-#### Start screen
-
-
-*labels / buttons*
-|id|Label|posx %|posy %|width %|height %|backgroundColor|fontColor|screenID (1 for all Start Screen Elements)|
-|---|---|---|---|---|---|---|---|---|
-|1|Spaceshooter Game Title|u16|u16|u16|u16|u32|u32|
-|2|Start New Campaign|u16|u16|u16|u16|u32|u32|
-|3|Continue Campaign|u16|u16|u16|u16|u32|u32|
-|4|Options|u16|u16|u16|u16|u32|u32|
-|5|Highscores|u16|u16|u16|u16|u32|u32|
-|6|Quit Game|u16|u16|u16|u16|u32|u32|
-
-
-#### options screen
-
-*labels / buttons*
-|id|Label|posx %|posy %|width %|height %|backgroundColor|fontColor|screenID (1 for all Option Screen Elements)|
-|---|---|---|---|---|---|---|---|---|
-|1|Game Options|u16|u16|u16|u16|u32|u32|
-|2|Resoulution|u16|u16|u16|u16|u32|u32|
-|3|Master Volume|u16|u16|u16|u16|u32|u32|
-|4|Sound Effects|u16|u16|u16|u16|u32|u32|
-|5|Music|u16|u16|u16|u16|u32|u32|
-|6|up/left/right/down|u16|u16|u16|u16|u32|u32|
-|7|fire|u16|u16|u16|u16|u32|u32|
-|8|use special item|u16|u16|u16|u16|u32|u32|
-|9|reset to default|u16|u16|u16|u16|u32|u32|
-|10|apply|u16|u16|u16|u16|u32|u32|
-|11|back|u16|u16|u16|u16|u32|u32|
-
-
-
-### Main Game Loop
-
-Overview of the main game loop:
-
-```
-initialize GameSystems
-
-sceneDataStack.Push(LoadFirstSceneData())
-# scene switcher loop
-while (scendeDataStack.hasAny())
-  currentSceneData = sceneDataStack.Pop()
-
-
-  # secene loop
-  while (!SceneOver(currentSceneData))
-    deltaT = ComputeDeltaT
-    inputLists= QueryInputs
-
-    # step 1:
-    ## decide on whethere to pick a new scenedata or not
-    ## in case new scenedata, push it on the stack
-
-    # step 2:
-    ## compute movements
-
-    # step 3:
-    ## compute collision with scenedata
-
-
-    # step 4:
-    ## compute animations with scenedata
-
-    # step 5:
-    ## compute sfx with scenedata
-
-    # step 6:
-    ## render the scene data
-    
-
-deinitialize gameSystems
-
-```
-
-
-
-
-
-## Issues
-### nvidia open source driver crash
-will crash with open source driver (nouveau) when its running on linux
-
-#### what should be improved:
-make it so that it no longer panics but gracefully shuts down.
-
-
+the concrete version has been forked for this game: https://github.com/DJawna/godot/tree/godotVersionAttackFromTitan
