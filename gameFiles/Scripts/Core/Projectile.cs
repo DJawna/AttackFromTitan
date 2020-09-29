@@ -22,8 +22,8 @@ namespace AttackFromTitan.Core {
         public Vector2 Trajectory {get;set;} = new Vector2(0f,-1f);
 
         public override void _Process(float delta){
-            var newPos = Position + (Trajectory * Speed * delta);
-            Position = newPos;
+            var newPos = GlobalPosition + (Trajectory * Speed * delta);
+            GlobalPosition = newPos;
 
             Ttl -= delta;
             if(Ttl <0){

@@ -13,18 +13,12 @@ namespace AttackFromTitan.Core {
 
         private float currentCoolDown  {get;set;}
 
-        public override void _Ready() {
-
-            
+        public override void _Ready() {           
         } 
 
         public override void _Process(float delta) {
             
 
-        }
-
-        public void addProjectileToParent(Projectile currentProjectile){
-            GetParent().AddChild(currentProjectile);
         }
 
         private void OnDeath(){

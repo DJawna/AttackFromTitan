@@ -51,4 +51,3 @@ ProjectileSpeed = 1000.0
 [connection signal="ToggleAttacking" from="AutoTargetingSystem" to="ProjectileSpawner" method="toggleSpawning"]
 [connection signal="area_entered" from="AutoTargetingSystem" to="AutoTargetingSystem" method="TargetingCandidateEntering"]
 [connection signal="area_exited" from="AutoTargetingSystem" to="AutoTargetingSystem" method="TargetingCandidateLeaving"]
-[connection signal="EmitProjectile" from="ProjectileSpawner" to="." method="addProjectileToParent"]

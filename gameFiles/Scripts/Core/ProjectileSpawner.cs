@@ -12,6 +12,9 @@ namespace AttackFromTitan.Core {
 
         [Export]
         public uint ProjectileDamage {get;set;}
+
+        [Export]
+        public float Ttl {get;set;}=0.5f;
         private float currentCoolDown {get;set;}
         private bool spawningEnabled;
         private Vector2 projectileTargetDirection = new Vector2(0f,1f);
@@ -20,8 +23,6 @@ namespace AttackFromTitan.Core {
         [Export]
         public float ProjectileSpeed {get;set;}
 
-        [Signal]
-        public delegate void EmitProjectile(Projectile theProjectile);
 
         public override void _Ready(){
             projectile =  GD.Load<PackedScene>(ProjectileSceneName);
@@ -39,10 +40,11 @@ namespace AttackFromTitan.Core {
                 var currentProjectile = projectile.Instance() as Projectile;
                 currentProjectile.Speed = ProjectileSpeed;
                 currentProjectile.Trajectory = projectileTargetDirection;
-                currentProjectile.GlobalPosition = GlobalPosition;
+                
                 currentProjectile.Damage = ProjectileDamage;
-                currentProjectile.Ttl = 0.5f;
-                EmitSignal(nameof(EmitProjectile),currentProjectile);
+                currentProjectile.Ttl = Ttl;
+                AddChild(currentProjectile);
+                currentProjectile.GlobalPosition = GlobalPosition;
             }
         }
 
