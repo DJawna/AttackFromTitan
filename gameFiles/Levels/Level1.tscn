@@ -44,7 +44,6 @@ shape = SubResource( 2 )
 [node name="PlayerControlledShip" parent="VerticalScrollRail" instance=ExtResource( 1 )]
 position = Vector2( 980.409, 917.878 )
 Acceleration = 50.0
-ProjectileSceneName = "res://Systems/Projectile.tscn"
 
 [node name="PauseMenuLayer" parent="." instance=ExtResource( 3 )]
 

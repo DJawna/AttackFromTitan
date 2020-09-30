@@ -5,26 +5,18 @@ namespace AttackFromTitan.Core {
     public class PlayerControlledShip : KinematicBody2D {
         private Vector2 velocity = new Vector2(0, 0);
 
-
         [Export]
         public float Deceleration { get; set; } = 5f;
-
 
         [Export]
         public float Acceleration { get; set; } = 10f;
 
-        [Export]
-        public string ProjectileSceneName { get; set; }
-
-        [Export]
-        public uint Damage {get;set;}
-
-        [Export]
-        public float ProjectileCooldown { get; set; } = 0.5f;
-        private float currentProjectileCooldown;
 
         [Signal]
         public delegate void OnDeath();
+
+        [Signal]
+        public delegate void ToggleFire(bool toggle);
 
         public void EmitDeath(){
             EmitSignal(nameof(OnDeath));
@@ -32,22 +24,15 @@ namespace AttackFromTitan.Core {
 
         private PackedScene projectileScene;
         public override void _Ready() {
-            projectileScene = GD.Load<PackedScene>(ProjectileSceneName);
-            if(projectileScene == null){
-                throw new Exception($"Scene could not be instanced: {ProjectileSceneName}");
-            }
         }
 
         public override void _Process(float delta) {
-            currentProjectileCooldown = Mathf.Max(0, currentProjectileCooldown - delta);
-            if (Input.IsActionPressed("primary_fire") && currentProjectileCooldown <= 0) {
-                var newProjectile =(Projectile) projectileScene.Instance();
-                newProjectile.Position = this.Position;
-                newProjectile.Damage = Damage;
-                newProjectile.Speed = 1000f;
-                newProjectile.Allegiance = Allegiance.humans;
-                GetParent().AddChild(newProjectile);
-                currentProjectileCooldown = ProjectileCooldown;
+            if (Input.IsActionPressed("primary_fire")) {
+                EmitSignal(nameof(ToggleFire), true);
+            }
+
+            if (Input.IsActionJustReleased("primary_fire")){
+                EmitSignal(nameof(ToggleFire), false);
             }
         }
 
@@ -90,14 +75,6 @@ namespace AttackFromTitan.Core {
             velocity.y += Mathf.Sign(velocity.y) * -1 * Mathf.Abs(velocity.y) * delta * Deceleration;
 
             MoveAndSlide(velocity);
-        }
-    
-        public override string _GetConfigurationWarning(){
-            var errorString = "";
-            if(string.IsNullOrEmpty(ProjectileSceneName)){
-                errorString = "You need to add a projectille scene name";
-            }
-            return errorString;
         }
     }
 

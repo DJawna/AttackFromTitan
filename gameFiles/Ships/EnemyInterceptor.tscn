@@ -3,7 +3,7 @@
 [ext_resource path="res://Sprites/ShipSprites/EnemyInterceptor.png" type="Texture" id=1]
 [ext_resource path="res://Systems/HitPointSystem.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/Core/EnemyInterceptor.cs" type="Script" id=3]
-[ext_resource path="res://Scripts/Core/ProjectileSpawner.cs" type="Script" id=4]
+[ext_resource path="res://Systems/ProjectileSpawner.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/Core/AutoTargetingSystem.cs" type="Script" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -39,15 +39,8 @@ script = ExtResource( 5 )
 [node name="EnemyDetectionHorizon" type="CollisionShape2D" parent="AutoTargetingSystem"]
 shape = SubResource( 3 )
 
-[node name="ProjectileSpawner" type="Node2D" parent="."]
-script = ExtResource( 4 )
-ProjectileSceneName = "res://Systems/Projectile.tscn"
-SpawnCoolDown = 0.5
-ProjectileDamage = 5
-ProjectileSpeed = 1000.0
+[node name="ProjectileSpawner" parent="." instance=ExtResource( 4 )]
 [connection signal="area_entered" from="." to="HitPointSystem" method="OnArea2dEntered"]
 [connection signal="OnDeath" from="HitPointSystem" to="." method="OnDeath"]
-[connection signal="BroadcastCurrentEnemyLocation" from="AutoTargetingSystem" to="ProjectileSpawner" method="updateProjectileTarget"]
-[connection signal="ToggleAttacking" from="AutoTargetingSystem" to="ProjectileSpawner" method="toggleSpawning"]
 [connection signal="area_entered" from="AutoTargetingSystem" to="AutoTargetingSystem" method="TargetingCandidateEntering"]
 [connection signal="area_exited" from="AutoTargetingSystem" to="AutoTargetingSystem" method="TargetingCandidateLeaving"]

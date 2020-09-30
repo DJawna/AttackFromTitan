@@ -17,19 +17,39 @@ namespace AttackFromTitan.Core {
         public float Ttl {get;set;}=0.5f;
         private float currentCoolDown {get;set;}
         private bool spawningEnabled;
-        private Vector2 projectileTargetDirection = new Vector2(0f,1f);
 
 
         [Export]
         public float ProjectileSpeed {get;set;}
 
+        [Export]
+        public Vector2 ProjectileTargetDirection {get;set;} = new Vector2(0f,-1f);
+
+        private Node projectileTargetNode; 
+
+        private Node getOrCreateProjectileTargetNode(){
+            var projectileTargetNodeName = "projectileTargetNode";
+            var candidate = GetNode($"/root/{projectileTargetNodeName}");
+            if(candidate == null){
+                candidate = new Node();
+                var rootNode = GetNode("/root");
+                candidate.Name = projectileTargetNodeName;
+                rootNode.AddChild(candidate);
+            }
+            return candidate;
+        }
+
 
         public override void _Ready(){
             projectile =  GD.Load<PackedScene>(ProjectileSceneName);
-
+            if(projectile == null){
+                throw new System.Exception($"projectile could not be initialized: {ProjectileSceneName}");
+            }
+            
+            projectileTargetNode = getOrCreateProjectileTargetNode();          
         }
         
-        public void toggleSpawning(bool spawningEnabled){
+        public void ToggleSpawning(bool spawningEnabled){
             this.spawningEnabled = spawningEnabled;
         }
 
@@ -39,19 +59,27 @@ namespace AttackFromTitan.Core {
                 currentCoolDown = SpawnCoolDown;
                 var currentProjectile = projectile.Instance() as Projectile;
                 currentProjectile.Speed = ProjectileSpeed;
-                currentProjectile.Trajectory = projectileTargetDirection;
+                currentProjectile.Trajectory = ProjectileTargetDirection;
                 
                 currentProjectile.Damage = ProjectileDamage;
                 currentProjectile.Ttl = Ttl;
-                AddChild(currentProjectile);
+                projectileTargetNode.AddChild(currentProjectile);
                 currentProjectile.GlobalPosition = GlobalPosition;
             }
         }
 
         public void updateProjectileTarget(Vector2 target){
-            projectileTargetDirection = GlobalPosition.DirectionTo(target);
+            ProjectileTargetDirection = GlobalPosition.DirectionTo(target);
         }
 
+        public override string _GetConfigurationWarning(){
+            var file = new File();
+            var err = "";
+            if(string.IsNullOrEmpty(ProjectileSceneName)){
+                err = $"file {ProjectileSceneName} is either null or empty";
+            }
+            return err;
+        }
     }
 
 }
