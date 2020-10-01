@@ -34,5 +34,7 @@ position = Vector2( 0, 15 )
 shape = SubResource( 2 )
 
 [node name="ProjectileSpawner" parent="." instance=ExtResource( 5 )]
+ProjectileAllegiance = 1
 [connection signal="OnDeath" from="." to="PlayerControlledShipArea2d" method="OnDead"]
+[connection signal="ToggleFire" from="." to="ProjectileSpawner" method="ToggleSpawning"]
 [connection signal="OnDeath" from="HitPointSystem" to="." method="EmitDeath"]
