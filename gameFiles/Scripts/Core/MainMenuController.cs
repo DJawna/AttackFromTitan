@@ -3,7 +3,11 @@ using Godot;
 namespace AttackFromTitan.Core {
     class MainMenuController : MarginContainer {
         private void StartNewCampaign() {
-            GetTree().ChangeScene("res://Levels/LevelHolder.tscn");
+            var tree = GetTree();
+            tree.ChangeScene("res://Levels/LevelHolder.tscn");
+            if(tree.Paused){
+                tree.Paused = false;
+            }
         }
 
     }

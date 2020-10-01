@@ -19,6 +19,7 @@ namespace AttackFromTitan.Core {
         public delegate void ToggleFire(bool toggle);
 
         public void EmitDeath(){
+            QueueFree();
             EmitSignal(nameof(OnDeath));
         }
 

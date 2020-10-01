@@ -38,3 +38,4 @@ ProjectileAllegiance = 1
 [connection signal="OnDeath" from="." to="PlayerControlledShipArea2d" method="OnDead"]
 [connection signal="ToggleFire" from="." to="ProjectileSpawner" method="ToggleSpawning"]
 [connection signal="OnDeath" from="HitPointSystem" to="." method="EmitDeath"]
+[connection signal="area_entered" from="PlayerControlledShipArea2d" to="HitPointSystem" method="OnArea2dEntered"]
