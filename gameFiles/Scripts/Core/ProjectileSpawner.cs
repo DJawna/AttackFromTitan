@@ -56,6 +56,7 @@ namespace AttackFromTitan.Core {
             this.spawningEnabled = spawningEnabled;
         }
 
+        //private readonly Vector2 thing = new Vector2(0f, -1f);
         public override void _Process(float delta) {
             currentCoolDown = Mathf.Max(0f,currentCoolDown - delta);
             if(spawningEnabled && currentCoolDown <=0){
@@ -66,8 +67,10 @@ namespace AttackFromTitan.Core {
                 currentProjectile.Allegiance =ProjectileAllegiance;
                 currentProjectile.Damage = ProjectileDamage;
                 currentProjectile.Ttl = Ttl;
+                
                 projectileTargetNode.AddChild(currentProjectile);
                 currentProjectile.GlobalPosition = GlobalPosition;
+                currentProjectile.Rotation += ProjectileTargetDirection.Angle();
             }
         }
 
