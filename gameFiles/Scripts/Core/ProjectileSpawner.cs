@@ -25,6 +25,9 @@ namespace AttackFromTitan.Core {
         [Export]
         public Vector2 ProjectileTargetDirection {get;set;} = new Vector2(0f,-1f);
 
+        [Export]
+        public Allegiance ProjectileAllegiance {get;set;}
+
         private Node projectileTargetNode; 
 
         private Node getOrCreateProjectileTargetNode(){
@@ -60,7 +63,7 @@ namespace AttackFromTitan.Core {
                 var currentProjectile = projectile.Instance() as Projectile;
                 currentProjectile.Speed = ProjectileSpeed;
                 currentProjectile.Trajectory = ProjectileTargetDirection;
-                
+                currentProjectile.Allegiance =ProjectileAllegiance;
                 currentProjectile.Damage = ProjectileDamage;
                 currentProjectile.Ttl = Ttl;
                 projectileTargetNode.AddChild(currentProjectile);

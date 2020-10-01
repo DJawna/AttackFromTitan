@@ -40,6 +40,7 @@ script = ExtResource( 5 )
 shape = SubResource( 3 )
 
 [node name="ProjectileSpawner" parent="." instance=ExtResource( 4 )]
+ProjectileAllegiance = 2
 [connection signal="area_entered" from="." to="HitPointSystem" method="OnArea2dEntered"]
 [connection signal="OnDeath" from="HitPointSystem" to="." method="OnDeath"]
 [connection signal="BroadcastCurrentEnemyLocation" from="AutoTargetingSystem" to="ProjectileSpawner" method="updateProjectileTarget"]
