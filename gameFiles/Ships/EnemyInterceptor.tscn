@@ -42,5 +42,7 @@ shape = SubResource( 3 )
 [node name="ProjectileSpawner" parent="." instance=ExtResource( 4 )]
 [connection signal="area_entered" from="." to="HitPointSystem" method="OnArea2dEntered"]
 [connection signal="OnDeath" from="HitPointSystem" to="." method="OnDeath"]
+[connection signal="BroadcastCurrentEnemyLocation" from="AutoTargetingSystem" to="ProjectileSpawner" method="updateProjectileTarget"]
+[connection signal="ToggleAttacking" from="AutoTargetingSystem" to="ProjectileSpawner" method="ToggleSpawning"]
 [connection signal="area_entered" from="AutoTargetingSystem" to="AutoTargetingSystem" method="TargetingCandidateEntering"]
 [connection signal="area_exited" from="AutoTargetingSystem" to="AutoTargetingSystem" method="TargetingCandidateLeaving"]
