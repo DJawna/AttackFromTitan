@@ -36,6 +36,9 @@ namespace AttackFromTitan.Core {
         [Signal]
         public delegate void OnDeath();
 
+        [Signal]
+        public delegate void OnTakingDamage();
+
 
 
         public void OnArea2dEntered(Area2D entered) {
@@ -43,6 +46,7 @@ namespace AttackFromTitan.Core {
             if (doesDamage != null &&
                 this.vulnerability ==doesDamage.Allegiance) {
                 Hitpoints -= doesDamage.Damage;
+                EmitSignal(nameof(OnTakingDamage));
             }
             if(Hitpoints <= 0){
                 EmitSignal(nameof(OnDeath));

@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Sprites/ShipSprites/PlayerShip.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Core/PlayerControlledShip.cs" type="Script" id=2]
 [ext_resource path="res://Systems/HitPointSystem.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/Controllers/PlayerControlledShipArea2d.cs" type="Script" id=4]
 [ext_resource path="res://Systems/ProjectileSpawner.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/Controllers/Vibrator.cs" type="Script" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 40.0
@@ -36,7 +37,11 @@ shape = SubResource( 2 )
 
 [node name="ProjectileSpawner" parent="." instance=ExtResource( 5 )]
 ProjectileAllegiance = 1
+
+[node name="Vibrator" type="Node" parent="."]
+script = ExtResource( 6 )
 [connection signal="OnDeath" from="." to="PlayerControlledShipArea2d" method="OnDead"]
 [connection signal="ToggleFire" from="." to="ProjectileSpawner" method="ToggleSpawning"]
 [connection signal="OnDeath" from="HitPointSystem" to="." method="EmitDeath"]
+[connection signal="OnTakingDamage" from="HitPointSystem" to="Vibrator" method="VibrateGently"]
 [connection signal="area_entered" from="PlayerControlledShipArea2d" to="HitPointSystem" method="OnArea2dEntered"]
