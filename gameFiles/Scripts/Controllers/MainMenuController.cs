@@ -1,6 +1,6 @@
 using Godot;
 
-namespace AttackFromTitan.Core {
+namespace AttackFromTitan.Controllers {
     class MainMenuController : MarginContainer {
         private void StartNewCampaign() {
             var tree = GetTree();
@@ -8,6 +8,10 @@ namespace AttackFromTitan.Core {
             if(tree.Paused){
                 tree.Paused = false;
             }
+        }
+
+        private void _on_QuitOptionNode_button_down() {
+            GetTree().Quit();
         }
 
     }

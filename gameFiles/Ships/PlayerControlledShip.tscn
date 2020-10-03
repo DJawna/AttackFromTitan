@@ -36,6 +36,7 @@ position = Vector2( 0, 15 )
 shape = SubResource( 2 )
 
 [node name="ProjectileSpawner" parent="." instance=ExtResource( 5 )]
+Ttl = 1.0
 ProjectileAllegiance = 1
 
 [node name="Vibrator" type="Node" parent="."]

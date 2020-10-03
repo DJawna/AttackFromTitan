@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-namespace AttackFromTitan.Core {
+namespace AttackFromTitan.Controllers {
     class LevelHolder: Node{
 
         

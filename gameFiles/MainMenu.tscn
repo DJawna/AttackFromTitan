@@ -1,12 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Scripts/Core/QuitOptionNode.cs" type="Script" id=1]
-[ext_resource path="res://Scripts/Core/MainMenuController.cs" type="Script" id=3]
+[ext_resource path="res://Scripts/Controllers/MainMenuController.cs" type="Script" id=1]
 
 [node name="MainMenuController" type="MarginContainer"]
 margin_right = 1024.0
 margin_bottom = 598.0
-script = ExtResource( 3 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -43,6 +42,5 @@ margin_top = 96.0
 margin_right = 1024.0
 margin_bottom = 116.0
 text = "Quit"
-script = ExtResource( 1 )
 [connection signal="button_down" from="Options/NewMission" to="." method="StartNewCampaign"]
-[connection signal="button_down" from="Options/QuitOptionNode" to="Options/QuitOptionNode" method="_on_QuitOptionNode_button_down"]
+[connection signal="button_down" from="Options/QuitOptionNode" to="." method="_on_QuitOptionNode_button_down"]
