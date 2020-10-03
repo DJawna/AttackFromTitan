@@ -14,6 +14,12 @@ namespace AttackFromTitan.Controllers {
             GetTree().Quit();
         }
 
+
+        private void openSettings(){
+            var tree = GetTree();
+            tree.ChangeScene("res://UI/OptionsController.tscn");
+        }
+
     }
 
 }
