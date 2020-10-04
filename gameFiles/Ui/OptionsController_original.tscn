@@ -21,8 +21,11 @@ text = "Game Options"
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="OptionsInputFields" type="HBoxContainer" parent="VBoxContainer"]
 margin_right = 601.0
 margin_bottom = 168.0
 custom_constants/separation = 32
@@ -30,7 +33,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/OptionsInputFields"]
 margin_right = 313.0
 margin_bottom = 168.0
 custom_constants/separation = 16
@@ -38,7 +41,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SoundEffectVolumeLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="SoundEffectVolumeLabel" type="Label" parent="VBoxContainer/OptionsInputFields/VBoxContainer"]
 margin_right = 313.0
 margin_bottom = 43.0
 custom_fonts/font = ExtResource( 1 )
@@ -47,7 +50,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MasterVolumeLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="MasterVolumeLabel" type="Label" parent="VBoxContainer/OptionsInputFields/VBoxContainer"]
 margin_top = 59.0
 margin_right = 313.0
 margin_bottom = 102.0
@@ -57,7 +60,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MusicVolumeLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="MusicVolumeLabel" type="Label" parent="VBoxContainer/OptionsInputFields/VBoxContainer"]
 margin_top = 118.0
 margin_right = 313.0
 margin_bottom = 161.0
@@ -67,26 +70,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/OptionsInputFields"]
 margin_left = 345.0
 margin_right = 601.0
 margin_bottom = 168.0
 custom_constants/separation = 36
 
-[node name="HSlider3" type="HSlider" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="HSlider3" type="HSlider" parent="VBoxContainer/OptionsInputFields/VBoxContainer2"]
 margin_right = 256.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 256, 32 )
 tick_count = 10
 
-[node name="HSlider" type="HSlider" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="HSlider" type="HSlider" parent="VBoxContainer/OptionsInputFields/VBoxContainer2"]
 margin_top = 68.0
 margin_right = 256.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 256, 32 )
 tick_count = 10
 
-[node name="HSlider2" type="HSlider" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="HSlider2" type="HSlider" parent="VBoxContainer/OptionsInputFields/VBoxContainer2"]
 margin_top = 136.0
 margin_right = 256.0
 margin_bottom = 168.0
