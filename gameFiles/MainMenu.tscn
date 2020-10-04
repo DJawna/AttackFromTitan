@@ -12,66 +12,66 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="MainContainer" type="VBoxContainer" parent="."]
 margin_right = 1920.0
 margin_bottom = 1080.0
 custom_constants/separation = 128
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MainContainer"]
 margin_right = 1920.0
 margin_bottom = 85.0
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer"]
+[node name="Label" type="Label" parent="MainContainer/MarginContainer"]
 margin_right = 1920.0
 margin_bottom = 85.0
 custom_fonts/font = ExtResource( 3 )
 text = "Attack from Titan"
 align = 1
 
-[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="MainContainer"]
 margin_top = 213.0
 margin_right = 1920.0
 margin_bottom = 474.0
 
-[node name="Options" type="VBoxContainer" parent="VBoxContainer/MarginContainer2"]
+[node name="Options" type="VBoxContainer" parent="MainContainer/MarginContainer2"]
 margin_right = 1920.0
 margin_bottom = 261.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NewMission" type="Button" parent="VBoxContainer/MarginContainer2/Options"]
+[node name="NewMission" type="Button" parent="MainContainer/MarginContainer2/Options"]
 margin_right = 1920.0
 margin_bottom = 49.0
 custom_fonts/font = ExtResource( 2 )
 text = "New Mission"
 
-[node name="Continue" type="Button" parent="VBoxContainer/MarginContainer2/Options"]
+[node name="Continue" type="Button" parent="MainContainer/MarginContainer2/Options"]
 margin_top = 53.0
 margin_right = 1920.0
 margin_bottom = 102.0
 custom_fonts/font = ExtResource( 2 )
 text = "Continue"
 
-[node name="Settings" type="Button" parent="VBoxContainer/MarginContainer2/Options"]
+[node name="Settings" type="Button" parent="MainContainer/MarginContainer2/Options"]
 margin_top = 106.0
 margin_right = 1920.0
 margin_bottom = 155.0
 custom_fonts/font = ExtResource( 2 )
 text = "Settings"
 
-[node name="RestartLevel" type="Button" parent="VBoxContainer/MarginContainer2/Options"]
+[node name="RestartLevel" type="Button" parent="MainContainer/MarginContainer2/Options"]
 margin_top = 159.0
 margin_right = 1920.0
 margin_bottom = 208.0
 custom_fonts/font = ExtResource( 2 )
 text = "Settings"
 
-[node name="QuitOptionNode" type="Button" parent="VBoxContainer/MarginContainer2/Options"]
+[node name="QuitOptionNode" type="Button" parent="MainContainer/MarginContainer2/Options"]
 margin_top = 212.0
 margin_right = 1920.0
 margin_bottom = 261.0
 custom_fonts/font = ExtResource( 2 )
 text = "Quit"
-[connection signal="button_down" from="VBoxContainer/MarginContainer2/Options/NewMission" to="." method="StartNewCampaign"]
-[connection signal="button_down" from="VBoxContainer/MarginContainer2/Options/QuitOptionNode" to="." method="_on_QuitOptionNode_button_down"]
+[connection signal="button_down" from="MainContainer/MarginContainer2/Options/NewMission" to="." method="StartNewCampaign"]
+[connection signal="button_down" from="MainContainer/MarginContainer2/Options/QuitOptionNode" to="." method="_on_QuitOptionNode_button_down"]
