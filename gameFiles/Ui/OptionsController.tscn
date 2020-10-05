@@ -5,23 +5,15 @@
 
 [node name="UIMenu" instance=ExtResource( 1 )]
 
-[node name="Title" parent="TopContainer" index="0"]
-text = "Options"
-
-[node name="BottomContainer" parent="." index="1"]
-margin_bottom = 317.0
-custom_constants/margin_left = 600
-
-[node name="OptionsInputFields" type="HBoxContainer" parent="BottomContainer" index="0"]
-margin_left = 600.0
-margin_right = 1720.0
+[node name="OptionsInputFields" type="HBoxContainer" parent="MiddleContainer" index="0"]
+margin_right = 1920.0
 margin_bottom = 168.0
 custom_constants/separation = 32
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BottomContainer/OptionsInputFields" index="0"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MiddleContainer/OptionsInputFields" index="0"]
 margin_right = 313.0
 margin_bottom = 168.0
 custom_constants/separation = 16
@@ -29,7 +21,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SoundEffectVolumeLabel" type="Label" parent="BottomContainer/OptionsInputFields/VBoxContainer" index="0"]
+[node name="SoundEffectVolumeLabel" type="Label" parent="MiddleContainer/OptionsInputFields/VBoxContainer" index="0"]
 margin_right = 313.0
 margin_bottom = 43.0
 custom_fonts/font = ExtResource( 2 )
@@ -38,7 +30,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MasterVolumeLabel" type="Label" parent="BottomContainer/OptionsInputFields/VBoxContainer" index="1"]
+[node name="MasterVolumeLabel" type="Label" parent="MiddleContainer/OptionsInputFields/VBoxContainer" index="1"]
 margin_top = 59.0
 margin_right = 313.0
 margin_bottom = 102.0
@@ -48,7 +40,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MusicVolumeLabel" type="Label" parent="BottomContainer/OptionsInputFields/VBoxContainer" index="2"]
+[node name="MusicVolumeLabel" type="Label" parent="MiddleContainer/OptionsInputFields/VBoxContainer" index="2"]
 margin_top = 118.0
 margin_right = 313.0
 margin_bottom = 161.0
@@ -58,26 +50,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="BottomContainer/OptionsInputFields" index="1"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MiddleContainer/OptionsInputFields" index="1"]
 margin_left = 345.0
 margin_right = 601.0
 margin_bottom = 168.0
 custom_constants/separation = 36
 
-[node name="HSlider3" type="HSlider" parent="BottomContainer/OptionsInputFields/VBoxContainer2" index="0"]
+[node name="HSlider3" type="HSlider" parent="MiddleContainer/OptionsInputFields/VBoxContainer2" index="0"]
 margin_right = 256.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 256, 32 )
 tick_count = 10
 
-[node name="HSlider" type="HSlider" parent="BottomContainer/OptionsInputFields/VBoxContainer2" index="1"]
+[node name="HSlider" type="HSlider" parent="MiddleContainer/OptionsInputFields/VBoxContainer2" index="1"]
 margin_top = 68.0
 margin_right = 256.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 256, 32 )
 tick_count = 10
 
-[node name="HSlider2" type="HSlider" parent="BottomContainer/OptionsInputFields/VBoxContainer2" index="2"]
+[node name="HSlider2" type="HSlider" parent="MiddleContainer/OptionsInputFields/VBoxContainer2" index="2"]
 margin_top = 136.0
 margin_right = 256.0
 margin_bottom = 168.0
