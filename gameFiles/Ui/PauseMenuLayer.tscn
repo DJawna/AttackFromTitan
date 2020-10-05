@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://Scripts/Core/PauseButtonListener.cs" type="Script" id=1]
-[ext_resource path="res://MainMenu.tscn" type="PackedScene" id=2]
 
 [node name="PauseMenuLayer" type="CanvasLayer"]
 pause_mode = 2
@@ -9,5 +8,3 @@ pause_mode = 2
 [node name="PauseButtonListener" type="Node2D" parent="."]
 visible = false
 script = ExtResource( 1 )
-
-[node name="MainMenu" parent="PauseButtonListener" instance=ExtResource( 2 )]

@@ -10,7 +10,7 @@ namespace AttackFromTitan.Controllers {
             }
         }
 
-        private void _on_QuitOptionNode_button_down() {
+        private void QuitGame() {
             GetTree().Quit();
         }
 

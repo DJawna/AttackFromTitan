@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Ui/menuItemFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scripts/Controllers/Options.cs" type="Script" id=2]
+
+[node name="Options" type="VBoxContainer"]
+margin_right = 1920.0
+margin_bottom = 261.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NewMission" type="Button" parent="."]
+margin_right = 1920.0
+margin_bottom = 49.0
+custom_fonts/font = ExtResource( 1 )
+text = "New Mission"
+
+[node name="LoadMission" type="Button" parent="."]
+margin_top = 53.0
+margin_right = 1920.0
+margin_bottom = 102.0
+custom_fonts/font = ExtResource( 1 )
+text = "Load ..."
+
+[node name="Settings" type="Button" parent="."]
+margin_top = 106.0
+margin_right = 1920.0
+margin_bottom = 155.0
+custom_fonts/font = ExtResource( 1 )
+text = "Settings"
+
+[node name="RestartLevel" type="Button" parent="."]
+margin_top = 159.0
+margin_right = 1920.0
+margin_bottom = 208.0
+custom_fonts/font = ExtResource( 1 )
+text = "Restart Current Level"
+
+[node name="QuitGame" type="Button" parent="."]
+margin_top = 212.0
+margin_right = 1920.0
+margin_bottom = 261.0
+custom_fonts/font = ExtResource( 1 )
+text = "Quit Game"
+[connection signal="button_down" from="NewMission" to="." method="QuitGame"]
+[connection signal="button_down" from="Settings" to="." method="OpenSettings"]
+[connection signal="button_down" from="QuitGame" to="." method="QuitGame"]

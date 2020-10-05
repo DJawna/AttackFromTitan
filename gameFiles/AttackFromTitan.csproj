@@ -72,6 +72,8 @@
     <Compile Include="Scripts\Controllers\Vibrator.cs" />
     <Compile Include="Scripts\Controllers\LevelHolder.cs" />
     <Compile Include="Scripts\Controllers\MainMenuController.cs" />
+    <Compile Include="Scripts\Controllers\Options.cs" />
+    <Compile Include="Scripts\Controllers\UIMenu.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
