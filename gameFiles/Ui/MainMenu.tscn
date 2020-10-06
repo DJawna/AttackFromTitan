@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Ui/UIMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Ui/Options.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/Controllers/MainMenuController.cs" type="Script" id=3]
 
 [node name="UIMenu" instance=ExtResource( 1 )]
 
@@ -13,3 +14,7 @@ RestartLevelVissible = false
 
 [node name="GoBack" parent="BottomContainer" index="0"]
 visible = false
+
+[node name="MainMenuController" type="Node" parent="." index="3"]
+script = ExtResource( 3 )
+[connection signal="newMission" from="MiddleContainer/Options" to="MainMenuController" method="NewMission"]

@@ -20,7 +20,33 @@ namespace AttackFromTitan.Controllers {
         public bool QuitGameVisible { get; set; } = true;
 
         [Signal]
-        public 
+        public delegate void newMission();
+
+        [Signal]
+        public delegate void LoadMission();
+
+        [Signal]
+        public delegate void Settings();
+
+        [Signal]
+        public delegate void RestartLevel();
+
+
+        public void EmitNewMission() {
+            EmitSignal(nameof(newMission));
+        }
+
+        public void EmitLoadMission() {
+            EmitSignal(nameof(newMission));
+        }
+
+        public void EmitSettings() {
+            EmitSignal(nameof(newMission));
+        }
+
+        public void EmitRestartLevel() {
+            EmitSignal(nameof(newMission));
+        }
 
         public override void _Ready() {
             var children = new Dictionary<string, CanvasItem>();
@@ -51,24 +77,8 @@ namespace AttackFromTitan.Controllers {
             }
         }
 
-
-        private void StartNewMission() {
-            EmitSignal()
-            var tree = GetTree();
-            tree.ChangeScene("res://Levels/LevelHolder.tscn");
-            if (tree.Paused) {
-                tree.Paused = false;
-            }
-        }
-
         private void QuitGame() {
             GetTree().Quit();
-        }
-
-
-        private void OpenSettings() {
-            var tree = GetTree();
-            tree.ChangeScene("res://UI/OptionsController.tscn");
         }
     }
 }

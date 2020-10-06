@@ -1,17 +1,13 @@
 using Godot;
 
 namespace AttackFromTitan.Controllers {
-    class MainMenuController : MarginContainer {
-        private void StartNewCampaign() {
+    class MainMenuController : Node {
+        private void NewMission() {
             var tree = GetTree();
             tree.ChangeScene("res://Levels/LevelHolder.tscn");
             if(tree.Paused){
                 tree.Paused = false;
             }
-        }
-
-        private void QuitGame() {
-            GetTree().Quit();
         }
 
 
