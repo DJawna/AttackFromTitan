@@ -21,6 +21,6 @@ visible = false
 
 [node name="MainMenuController" type="Node" parent="." index="4"]
 script = ExtResource( 3 )
-[connection signal="NewMission" from="MiddleContainer/Options" to="." method="NewMission"]
+[connection signal="NewMission" from="MiddleContainer/Options" to="MainMenuController" method="NewMission"]
 [connection signal="Settings" from="MiddleContainer/Options" to="MainMenuController" method="OpenSettings"]
 [connection signal="OnGoingBack" from="SettingsMenu" to="MainMenuController" method="CloseSettings"]
