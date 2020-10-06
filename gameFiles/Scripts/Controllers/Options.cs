@@ -20,7 +20,7 @@ namespace AttackFromTitan.Controllers {
         public bool QuitGameVisible { get; set; } = true;
 
         [Signal]
-        public delegate void newMission();
+        public delegate void NewMission();
 
         [Signal]
         public delegate void LoadMission();
@@ -33,19 +33,19 @@ namespace AttackFromTitan.Controllers {
 
 
         public void EmitNewMission() {
-            EmitSignal(nameof(newMission));
+            EmitSignal(nameof(NewMission));
         }
 
         public void EmitLoadMission() {
-            EmitSignal(nameof(newMission));
+            EmitSignal(nameof(LoadMission));
         }
 
         public void EmitSettings() {
-            EmitSignal(nameof(newMission));
+            EmitSignal(nameof(Settings));
         }
 
         public void EmitRestartLevel() {
-            EmitSignal(nameof(newMission));
+            EmitSignal(nameof(RestartLevel));
         }
 
         public override void _Ready() {

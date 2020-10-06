@@ -48,4 +48,4 @@ margin_right = 1920.0
 margin_bottom = 49.0
 custom_fonts/font = ExtResource( 2 )
 text = "go back"
-[connection signal="button_down" from="BottomContainer/GoBack" to="." method="OnGoingBack"]
+[connection signal="button_down" from="BottomContainer/GoBack" to="." method="GoingBackButtonPressed"]

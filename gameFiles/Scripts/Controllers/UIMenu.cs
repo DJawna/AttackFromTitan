@@ -1,7 +1,7 @@
 using Godot;
 
 namespace AttackFromTitan.Controllers {
-    class UIMenu :Node{
+    class UIMenu :Control{
 
         [Signal]
         public delegate void OnGoingBack();
