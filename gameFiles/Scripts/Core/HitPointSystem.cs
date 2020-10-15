@@ -46,6 +46,7 @@ namespace AttackFromTitan.Core {
             if (doesDamage != null &&
                 this.vulnerability ==doesDamage.Allegiance) {
                 Hitpoints -= doesDamage.Damage;
+                doesDamage.DamageHasBeenReceived = true;
                 EmitSignal(nameof(OnTakingDamage));
             }
             if(Hitpoints <= 0){
@@ -60,6 +61,8 @@ namespace AttackFromTitan.Core {
     interface DoesDamage {
         uint Damage { get; set; }
         Allegiance Allegiance { get;set;}
+
+        bool DamageHasBeenReceived{get;set;}
     }
 
 }

@@ -5,7 +5,11 @@ namespace AttackFromTitan.Core {
 
         [Export]
         public string ProjectileSceneName{get;set;}
+
+        [Export]
+        public string ProjectileExplosionSceneName{get;set;}
         private PackedScene projectile;
+        private PackedScene projectileExplosion;
 
         [Export]
         public float SpawnCoolDown{get;set;}
@@ -48,6 +52,11 @@ namespace AttackFromTitan.Core {
             if(projectile == null){
                 throw new System.Exception($"projectile could not be initialized: {ProjectileSceneName}");
             }
+
+            projectileExplosion = GD.Load<PackedScene>(ProjectileExplosionSceneName);
+            if(projectile == null){
+                throw new System.Exception($"projectileExplosion could not be initialized: {ProjectileExplosionSceneName}");
+            }
             
             projectileTargetNode = getOrCreateProjectileTargetNode();          
         }
@@ -66,6 +75,7 @@ namespace AttackFromTitan.Core {
                 currentProjectile.Trajectory = ProjectileTargetDirection;
                 currentProjectile.Allegiance =ProjectileAllegiance;
                 currentProjectile.Damage = ProjectileDamage;
+                currentProjectile.PopAnimationScene = projectileExplosion;
                 currentProjectile.Ttl = Ttl;
                 
                 projectileTargetNode.AddChild(currentProjectile);

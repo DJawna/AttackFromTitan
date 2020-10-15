@@ -40,6 +40,7 @@ script = ExtResource( 5 )
 shape = SubResource( 3 )
 
 [node name="ProjectileSpawner" parent="." instance=ExtResource( 4 )]
+ProjectileExplosionSceneName = "res://Effects/PopAnimation.tscn"
 Ttl = 1.0
 ProjectileAllegiance = 2
 [connection signal="area_entered" from="." to="HitPointSystem" method="OnArea2dEntered"]
