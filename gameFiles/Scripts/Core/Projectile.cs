@@ -45,6 +45,7 @@ namespace AttackFromTitan.Core {
             if(DamageHasBeenReceived && PopAnimationScene != null){
                 var pop =(PopAnimation) PopAnimationScene.Instance();
                 pop.GlobalPosition = this.GlobalPosition;
+                pop.ExplosionColor = ProjectileColor;
                 this.GetParent().AddChild(pop);
                 pop.Playing = true;
             }
