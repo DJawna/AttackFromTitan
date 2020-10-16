@@ -76,7 +76,6 @@
     <Compile Include="Scripts\Controllers\Options.cs" />
     <Compile Include="Scripts\Controllers\UIMenu.cs" />
     <Compile Include="Scripts\Controllers\PopAnimation.cs" />
-    <Compile Include="Scripts\Extensions\NodeExtensions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
