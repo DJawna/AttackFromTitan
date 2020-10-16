@@ -1,12 +1,8 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Sprites/Effects/PopAnimation.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Controllers/PopAnimation.cs" type="Script" id=2]
-[ext_resource path="res://shaders/fragmentShaders/ColorInVisiblePixels.shader" type="Shader" id=3]
-
-[sub_resource type="ShaderMaterial" id=19]
-shader = ExtResource( 3 )
-shader_param/replacementColor = Vector3( 0.4, 0.6, 0.9 )
+[ext_resource path="res://Materials/ExplosionMaterial.tres" type="Material" id=3]
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 1 )
@@ -77,7 +73,7 @@ animations = [ {
 } ]
 
 [node name="PopAnimation" type="AnimatedSprite"]
-material = SubResource( 19 )
+material = ExtResource( 3 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 18 )
 script = ExtResource( 2 )

@@ -42,6 +42,7 @@ shape = SubResource( 3 )
 [node name="ProjectileSpawner" parent="." instance=ExtResource( 4 )]
 ProjectileExplosionSceneName = "res://Effects/PopAnimation.tscn"
 Ttl = 1.0
+ProjectileColor = Vector3( 0.352, 0.576, 0.29 )
 ProjectileAllegiance = 2
 [connection signal="area_entered" from="." to="HitPointSystem" method="OnArea2dEntered"]
 [connection signal="OnDeath" from="HitPointSystem" to="." method="OnDeath"]

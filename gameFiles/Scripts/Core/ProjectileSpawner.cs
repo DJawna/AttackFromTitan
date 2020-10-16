@@ -30,6 +30,9 @@ namespace AttackFromTitan.Core {
         public Vector2 ProjectileTargetDirection {get;set;} = new Vector2(0f,-1f);
 
         [Export]
+        public Vector3 ProjectileColor {get;set;} = new Vector3(1f,0f,0f);
+
+        [Export]
         public Allegiance ProjectileAllegiance {get;set;}
 
         private Node projectileTargetNode; 
@@ -77,6 +80,7 @@ namespace AttackFromTitan.Core {
                 currentProjectile.Damage = ProjectileDamage;
                 currentProjectile.PopAnimationScene = projectileExplosion;
                 currentProjectile.Ttl = Ttl;
+                currentProjectile.ProjectileColor = this.ProjectileColor;
                 
                 projectileTargetNode.AddChild(currentProjectile);
                 currentProjectile.GlobalPosition = GlobalPosition;
