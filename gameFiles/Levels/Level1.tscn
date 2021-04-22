@@ -49,4 +49,5 @@ Acceleration = 50.0
 
 [node name="EnemyInterceptor" parent="." instance=ExtResource( 2 )]
 position = Vector2( 336.738, 175.104 )
+
 [connection signal="OnDeath" from="VerticalScrollRail/PlayerControlledShip" to="." method="EmitGameOver"]

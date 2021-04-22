@@ -228,6 +228,8 @@ After defeating the alien invasion in earths orbit we are fighting the alien bas
 ## Tech spec
 This chapter is all about the architecture of the app.
 
-### the Game is using Godot
+### Godot stuff
 
-the concrete version has been forked for this game: https://github.com/DJawna/godot/tree/godotVersionAttackFromTitan
+#### Current Version
+
+2021-04-21 3.3 64 bit version for mono

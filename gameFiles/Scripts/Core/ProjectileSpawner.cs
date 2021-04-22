@@ -39,14 +39,14 @@ namespace AttackFromTitan.Core {
 
         private Node getOrCreateProjectileTargetNode(){
             var projectileTargetNodeName = "projectileTargetNode";
-            var candidate = GetNode($"/root/{projectileTargetNodeName}");
-            if(candidate == null){
-                candidate = new Node();
+            if(!HasNode($"/root/{projectileTargetNodeName}")){
+                var candidate = new Node();
                 var rootNode = GetNode("/root");
                 candidate.Name = projectileTargetNodeName;
                 rootNode.AddChild(candidate);
+                return candidate;
             }
-            return candidate;
+            return GetNode($"/root/{projectileTargetNodeName}");
         }
 
 
