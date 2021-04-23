@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/Core/PauseButtonListener.cs" type="Script" id=1]
 [ext_resource path="res://Ui/PauseMenu.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scripts/Controllers/UIMenu.cs" type="Script" id=3]
 
 [node name="PauseMenuLayer" type="CanvasLayer"]
 pause_mode = 2
@@ -24,6 +23,5 @@ __meta__ = {
 [node name="UIMenu" parent="PauseButtonListener/MarginContainer" instance=ExtResource( 2 )]
 margin_right = 1920.0
 margin_bottom = 1080.0
-script = ExtResource( 3 )
 
 [connection signal="OnGoingBack" from="PauseButtonListener/MarginContainer/UIMenu" to="PauseButtonListener" method="Unpause"]

@@ -12,4 +12,3 @@ RestartLevelVissible = true
 
 [node name="GoBack" parent="BottomContainer" index="0"]
 visible = true
-[connection signal="NewMission" from="MiddleContainer/Options" to="MainMenuController" method="NewMission"]

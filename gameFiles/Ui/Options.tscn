@@ -11,7 +11,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NewMission" type="Button" parent="."]
+[node name="NewMissionButton" type="Button" parent="."]
 margin_right = 1920.0
 margin_bottom = 49.0
 custom_fonts/font = ExtResource( 1 )
@@ -44,7 +44,8 @@ margin_right = 1920.0
 margin_bottom = 261.0
 custom_fonts/font = ExtResource( 1 )
 text = "Quit Game"
-[connection signal="button_down" from="NewMission" to="." method="EmitNewMission"]
+
+[connection signal="button_down" from="NewMissionButton" to="." method="EmitNewMission"]
 [connection signal="button_down" from="LoadMission" to="." method="EmitLoadMission"]
 [connection signal="button_down" from="Settings" to="." method="EmitSettings"]
 [connection signal="button_down" from="RestartLevel" to="." method="EmitRestartLevel"]
